@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Приглашение на 8 Марта</title>
+<style>
+:root {
+    --primary-pink: #ff8fa3;
+    --soft-gold: #d4af37;
+    --bg-gradient: linear-gradient(135deg, #fff5f6 0%, #ffe3e8 100%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Лепестки */
+#petals-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Карточка */
+.card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(255, 143, 163, 0.2);
+    max-width: 500px;
+    text-align: center;
+    border: 2px solid white;
+    position: relative;
+    z-index: 1;
+    margin: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    color: var(--primary-pink);
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+}
+
+.flower-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: sway 3s ease-in-out infinite;
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+.details {
+    background: #fff0f3;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 30px;
+    border-left: 5px solid var(--primary-pink);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #444;
+}
+
+.highlight {
+    color: var(--primary-pink);
+}
+
+.btn {
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: var(--primary-pink);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    animation: pulse 2.5s infinite;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 143, 163, 0.4);
+    background: #ff758f;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 143, 163, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 143, 163, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 143, 163, 0); }
+}
+
+/* Лепестки */
+.petal {
+    position: absolute;
+    background-color: #ffb7c5;
+    border-radius: 150% 0 150% 0;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Конфетти */
+.confetti {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    top: -10px;
+    opacity: 0.9;
+    border-radius: 50%;
+    animation: fallConfetti linear forwards;
+}
+
+@keyframes fallConfetti {
+    to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<div id="petals-container"></div>
+
+<div class="card">
+    <div class="flower-icon">🌸</div>
+
+    <h1>Құрметті, әдемі де ақылды қыздар!</h1>
+
+    <p>Сіздерді көктемнің ең нәзік, ең шуақты мерекесі — 8 наурыз Халықаралық әйелдер күнімен шын жүректен құттықтаймыз!</p>
+
+    <p>Көктемдей құлпырып, әрдайым күлімдеп жүре беріңіздер. Армандарыңыз орындалып, оқуда да, өмірде де тек биіктерден көрініңіздер. Сіздердің мейірімдеріңіз бен жылулықтарыңыз айналаға жарық сыйлайды.</p>
+
+    <p>Осы мерекеге орай ұйымдастырылатын шағын кешімізге сіздерді арнайы шақырамыз! Көңілді ойындар, тәтті дастархан, жылы тілектер мен ерекше сыйлықтар сіздерді күтеді.</p>
+
+    <p>Келіңіздер, бұл күнді бірге ұмытылмас естелікке айналдырайық! 🌷✨</p>
+
+    <p style="text-align: right; margin-top: 10px; font-style: italic; color: #888; font-size: 0.95rem;">
+        Құрметпен,<br> Aynalayindar ұлдар қауымы
+    </p>
+
+    <div class="details">
+        <div class="info-row">
+            <span>📅 Күні:</span>
+            <span class="highlight">9 Наурыз 2026</span>
+        </div>
+        <div class="info-row">
+            <span>⏰ Уақыты:</span>
+            <span class="highlight">17:55</span>
+        </div>
+        <div class="info-row">
+            <span>📍 Орны:</span>
+            <span class="highlight">Кейін айтармыз 😉</span>
+        </div>
+    </div>
+
+    <p style="margin-top: 20px; font-style: italic;">
+        Сіздерді көтеріңкі көңіл күй, хош иісті гүлдер мен ерекше тосынсыйларға толы ұмытылмас мереке күтеді! 💐🎉
+    </p>
+
+    <a href="#" class="btn" onclick="showConfetti()">
+        Мен міндетті түрде келемін!
+    </a>
+</div>
+
+<script>
+function createPetals() {
+    const container = document.getElementById('petals-container');
+    const petalCount = 30;
+
+    for (let i = 0; i < petalCount; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        const size = Math.random() * 15 + 10;
+        petal.style.width = size + 'px';
+        petal.style.height = size + 'px';
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
+        petal.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(petal);
+    }
+}
+createPetals();
+
+// Конфетти при нажатии
+function showConfetti() {
+    const btn = document.querySelector('.btn');
+    btn.innerText = "Қатысу расталды ✅";
+    btn.disabled = true;
+    btn.style.background = "#6bcf8e";
+
+    for (let i = 0; i < 80; i++) {
+        const conf = document.createElement('div');
+        conf.className = 'confetti';
+        conf.style.left = Math.random() * 100 + 'vw';
+        conf.style.background = `hsl(${Math.random()*360}, 100%, 60%)`;
+        conf.style.animationDuration = (Math.random()*2 + 2) + 's';
+        document.body.appendChild(conf);
+
+        setTimeout(() => conf.remove(), 3000);
+    }
+}
+</script>
+
+</body>
+</html>
